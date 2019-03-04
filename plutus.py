@@ -12,10 +12,8 @@ from ellipticcurve.privateKey import PrivateKey
 DATABASE = r'database/FEB_03_2019/'
 
 def generate_private_key(): 
-    """Generate a random 32-byte hex integer which serves as a randomly generated Bitcoin private key.
-    Average Time: 0.0000061659 seconds
-    """
-    return binascii.hexlify(os.urandom(32)).decode('utf-8').upper()
+    """reading from stdout"""
+    return hashlib.sha256(input().encode()).hexdigest().upper()
 
 def private_key_to_public_key(private_key):
     """Accept a hex private key and convert it to its respective public key. Because converting a private key to 
